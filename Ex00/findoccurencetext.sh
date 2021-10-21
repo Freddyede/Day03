@@ -1,0 +1,1 @@
+sed -e 's/[^[:alpha:]]/ /g' histoire.txt | tr '\n' " " |  tr -s " " | tr " " '\n'| tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | awk '{ for (i=NF; i>1; i--) printf("%s ",$i); print $1; }';
